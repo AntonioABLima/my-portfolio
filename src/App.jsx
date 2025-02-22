@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import './App.css'
 import Navigation from './components/Navigation/navigation'
-import Project from './components/projectComponent/project'
+import Projects from './components/Projects/projects'
 import Footer from './components/Footer/footer'
-import projectsDescription from './components/projectComponent/projectsDescriptions/ProjectsDescpritions'
+import projectsDescription from './components/Projects/projectComponent/projectsDescriptions/ProjectsDescpritions'
 
 function App() {
 
@@ -24,27 +25,8 @@ function App() {
 					</p>
 				))}
 			</section>
-			
-			<section id='projects'>
-	            <h1>Projects</h1>
-				<Project
-					title="Mandioca Mod"
-					year="2024"
-					descriptions={projectsDescription.MandiocaMod}
-					skills={["Java", "Minecraft", "Gaming", "Cassava"]}
-					link="https://www.curseforge.com/minecraft/mc-mods/mod-da-mandioca"
-					anchorText ="Mod_da_Mandioca.com"
-				/>
-				<Project
-					title="App for employee consumption"
-					year="2024"
-					descriptions={projectsDescription.ArqApp}
-					skills={["React Native", "Node Js", "Vite", "Mongo", "Party!"]}
-				/>
-				<hr/>
-				<p>This are some projects I've worked on over the years, I hope you enjoy some of them 🙏. Besides these, I have many other personal/university projects, and experiments that might evolve into something bigger, and a lot more to come!</p>	
-			</section>
-			
+
+			<Projects/>
 			
 			<section id='contact'>
 				<h1>Contact</h1>
