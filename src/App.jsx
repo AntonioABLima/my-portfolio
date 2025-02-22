@@ -40,16 +40,16 @@ function App() {
 					descriptions={projectsDescription.ArqApp}
 					skills={["React Native", "Node Js", "Vite", "Mongo", "Party!"]}
 				/>
-				
+				<hr/>
+				<p>This are some projects I've worked on over the years, I hope you enjoy some of them 🙏. Besides these, I have many other personal/university projects, and experiments that might evolve into something bigger, and a lot more to come!</p>	
 			</section>
 			
-			{/* <p>This are some projects I've worked on over the years, I hope you enjoy some of them 🙏. Besides these, I have many other personal/university projects, and experiments that might evolve into something bigger, and a lot more to come!</p>	 */}
 			
-			{/* <section id='contact'>
+			<section id='contact'>
 				<h1>Contact</h1>
 				<p style={{textAlign: 'center'}}>Reach out on <a className='link' href="https://www.linkedin.com/in/ant%C3%B4nio-alexandre-borges-lima/" target='_blank' rel='noopener noreferrer'><b>LinkedIn</b></a>
 				</p>
-			</section> */}
+			</section>
 		</main>
         </>
     )

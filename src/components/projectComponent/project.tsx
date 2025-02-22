@@ -4,7 +4,7 @@ import './project.css'
 const Projeto = ({ title, year, descriptions, skills, imageClass, link, anchorText }) => {
   	return (
 		<div className="projeto">
-			<hr />
+			<hr/>
 			<h2>{title}</h2>
 			<h3>{year}</h3>
 			
