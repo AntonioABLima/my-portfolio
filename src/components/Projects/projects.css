@@ -8,3 +8,25 @@
     padding-bottom: 16px;
 	text-align: center;
 }
+
+.project-btn {
+    padding: 4px 8px;
+    border:  solid 2px var(--text-color);
+    color: var(--text-color);
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.project-btn:hover {
+    color: var(--text-color);
+    opacity: 1;
+}
+
+
+.project-btn.active {
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+    opacity: 1;
+    cursor:unset
+}
+

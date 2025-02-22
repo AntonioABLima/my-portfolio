@@ -32,8 +32,16 @@ const Projects = () => {
     return (
         <section id='projects'>
             <div className="project-btns">
-                <a onClick={() => setProjectType('realLife')}>Real Life</a>
-                <a onClick={() => setProjectType('coolPersonal')}>Cool Personal</a>
+                <a 
+                    className={`project-btn ${projectType === 'realLife' ? 'active' : ''}`} 
+                    onClick={() => setProjectType('realLife')}>
+                    Real Life
+                </a>
+                <a 
+                    className={`project-btn ${projectType === 'coolPersonal' ? 'active' : ''}`}
+                    onClick={() => setProjectType('coolPersonal')}>
+                    Cool Personal
+                </a>
             </div>
             <h1>Projects</h1>
 
