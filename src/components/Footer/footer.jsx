@@ -4,9 +4,9 @@ const Footer = () => {
     return (
         <>
             <div className='footer'>
-                <div>Developed + Designed by Antonio Lima</div>
-                <div>Heavily inspired by Ed's Hinrichsen page</div>
-                <div>COPYRIGHT © 2024-{new Date().getFullYear()} Antonio Lima</div>
+                <div>Developed by Antonio Lima.</div>
+                <div>This page is heavily inspired by Ed's Hinrichsen <a className='underline-link' href='https://edh.dev/' target='blank' rel='noopener noreferrer'>page</a>.</div>
+                <div>COPYRIGHT © 2024-{new Date().getFullYear()} Antonio Lima.</div>
             </div>
         </>
     );
