@@ -1,6 +1,7 @@
 import './App.css'
 import Navigation from './components/Navigation/navigation'
 import Project from './components/projectComponent/project'
+import Footer from './components/Footer/footer'
 import projectsDescription from './components/projectComponent/projectsDescriptions/ProjectsDescpritions'
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
 				<p style={{textAlign: 'center'}}>Reach out on <a className='link' href="https://www.linkedin.com/in/ant%C3%B4nio-alexandre-borges-lima/" target='_blank' rel='noopener noreferrer'><b>LinkedIn</b></a>
 				</p>
 			</section>
+			<Footer></Footer>
 		</main>
         </>
     )

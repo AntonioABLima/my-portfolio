@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    font-size: 12px;
+    width: clamp(0px,95vw,680px);
+    margin: auto;
+    padding: 32px 0;
+    text-align: center;
+    color: var(--text-color);
+    z-index: 2;
+    position: relative;
+}
