@@ -46,7 +46,7 @@ h3 {
 .skills li {
 	display: inline-block;
 	padding: 4px 8px;
-	border: dashed 1px var(--text-color);
+	border:  solid 2px var(--text-color);
 	box-shadow: 1px 1px #222831,4px 4px #52525240;
 }
 
