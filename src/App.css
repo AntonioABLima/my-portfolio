@@ -1,0 +1,45 @@
+main {
+	margin-top: 200vh;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+
+section {
+    padding-bottom: 64px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+section::after {
+	content: "";
+	border-bottom: dashed 2px var(--text-color);
+	position: absolute;
+	bottom: 0;
+	transform: translate(-50%);
+	width: clamp(0px,95vw,680px);
+}
+
+
+h1 {
+	display: inline-block;
+	background-color: var(--text-color);
+	color: var(--background-color);
+	font-size: 2em;
+	padding: 4px 16px 8px;
+	margin: 0 auto .3em;
+	font-family: 'PublicPixel';
+}
+
+.link {
+	background-color: var(--text-color);
+	color: var(--background-color);
+	font-size: 1.2em;
+	padding: 2px 4px 2px;
+	text-decoration: none;
+	transition: all .2s;
+}
+
+.link:hover {
+	color: var(--secondary-color);
+}

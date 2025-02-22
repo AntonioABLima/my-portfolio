@@ -1,0 +1,33 @@
+@font-face {
+    font-family: ChillPixelMono;
+    src: url('assets/fonts/ChillPixels-Mono.otf');
+    font-weight: normal;
+    font-style: normal
+}
+@font-face {
+    font-family: PublicPixel;
+    src: url('assets/fonts/PublicPixel.ttf');
+    font-weight: normal;
+    font-style: normal
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background-color: #fdeac8;
+    --shadow-color: #d3cabb;
+    --secondary-color : #ff9faf;
+    --text-color: #555555;
+    background-color: var(--background-color);
+
+}
+
+body {
+	font-family: 'ChillPixelMono',sans-serif;
+    overflow-x: hidden;
+    font-size: 18px;
+    
+}

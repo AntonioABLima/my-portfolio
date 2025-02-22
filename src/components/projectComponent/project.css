@@ -1,0 +1,73 @@
+h2 {
+	display: inline-block;
+	font-size: 1.2em;
+	text-align: center;
+	color: var(--background-color);
+	background-color: var(--text-color);
+	padding: 4px 16px 8px;
+	margin: .3em auto;
+	font-family: 'PublicPixel';
+	
+}
+
+h3 {
+	font-size: 1.2em;
+	text-align: center;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	margin: .3em auto;
+	font-family: 'PublicPixel';
+	color: var(--text-color)
+}
+
+.skills, p {
+	padding: 16px;
+	text-align: left;
+	line-height: 1.5;
+	width: clamp(0px,95vw,680px);
+	margin: auto;
+	box-sizing: border-box;
+	color: var(--text-color)
+}
+
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	text-align: center;
+	list-style-type: none;
+	transition: all .3s;
+	
+}
+
+.skills li {
+	display: inline-block;
+	padding: 4px 8px;
+	border: dashed 1px var(--text-color);
+	box-shadow: 1px 1px #222831,4px 4px #52525240;
+}
+
+
+hr {
+	width: 100px;
+	height: 2px;
+	background-color: none;
+	margin: 40px auto;
+	border: none;
+	border-bottom-width: medium;
+	border-bottom-style: none;
+	border-bottom-color: currentcolor;
+	border-bottom: dashed 2px var(--text-color);
+}
+
+.projectLink {
+	color: inherit;
+	text-decoration-thickness: 2px;
+	transition: all .2s;
+}
+.projectLink:hover{
+	color: rgb(255, 159, 175);
+}

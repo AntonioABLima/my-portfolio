@@ -1,0 +1,123 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #faebd7;
+    width: 0px;
+    z-index: 5;
+}
+
+
+.menu-btn {
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 0px;
+    transition: all .7s;
+    z-index: 1;
+    pointer-events: none;
+    justify-content: space-between;
+}
+
+@media (min-width: 540px) {
+    .menu-btn{
+        justify-content: left;
+    }
+
+    .menu-btn.open {
+        translate: 28px;
+    }
+
+}
+
+
+.menu-btn > .btn:first-child {
+    padding: 8px 24px;
+    margin-right: 16px;
+}
+
+
+nav .btn {
+    padding: 8px 16px;
+    fill: var(--background-color);
+}
+
+.btn {
+    pointer-events: all;
+    position: relative;
+    font-family: chill,sans-serif;
+    font-size: 18px;
+    display: inline-flex;
+    gap: .25rem;
+    box-shadow: 6px 6px #52525240;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    cursor: pointer;
+    transition: all .7s;
+    padding: 4px 24px;
+    border: var(--background-color) solid 1px;
+    text-decoration: none;
+}
+
+.btn.open {
+    background-color: var(--background-color);
+    fill: var(--text-color);
+    border: var(--text-color) solid 1px;
+    box-shadow: 6px 6px var(--shadow-color)
+}
+
+.menu-body {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    font-size: 2em;
+    font-family:'PublicPixel';
+    text-decoration: none !important;
+    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    /* width: 100vw; */
+    z-index: 0;
+    transition: all 0.7s;
+    
+    display: inline-flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 70px;
+    padding-left: 20px;
+    box-sizing: border-box;    
+    opacity: 0;
+    text-align: left;
+}
+
+.menu-body.open {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+@media (min-width: 540px) {
+    .menu-body {
+        padding-left: 50px;
+    }
+}
+
+.menu-body a {
+    text-decoration: none !important;
+}
+
+a {
+    display: inline-block;
+    color: inherit;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    transition: all .3s;
+}
+
+a:hover{
+    color: var(--secondary-color);
+}
