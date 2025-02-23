@@ -18,7 +18,6 @@
 
 :root {
     --background-color: #fdeac8;
-    --shadow-color: #d3cabb;
     --secondary-color : #ff9faf;
     --text-color: #555555;
     background-color: var(--background-color);

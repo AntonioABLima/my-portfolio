@@ -7,7 +7,6 @@ nav {
     z-index: 5;
 }
 
-
 .menu-btn {
     position: fixed;
     padding: 20px;
@@ -52,21 +51,35 @@ nav .btn {
     font-size: 18px;
     display: inline-flex;
     gap: .25rem;
-    box-shadow: 6px 6px #52525240;
+    box-shadow: 6px 6px 2px #52525240;
     background-color: var(--text-color);
     color: var(--background-color);
     cursor: pointer;
-    transition: all .7s;
+    transition: all .3s;
     padding: 4px 24px;
     border: var(--background-color) solid 1px;
     text-decoration: none;
+}
+
+.btn:hover {
+    scale: 1.14;
+    fill: var(--secondary-color);
+    box-shadow:8px 8px 6px #52525240;
+    z-index: 2
+}
+
+.btn:active {
+    transform:scale(.95);
 }
 
 .btn.open {
     background-color: var(--background-color);
     fill: var(--text-color);
     border: var(--text-color) solid 1px;
-    box-shadow: 6px 6px var(--shadow-color)
+    box-shadow: 6px 6px #d0c5b4
+}
+.btn.open:hover {
+    box-shadow: 6px 6px 4px#d0c5b4
 }
 
 .menu-body {
