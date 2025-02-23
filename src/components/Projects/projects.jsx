@@ -2,6 +2,7 @@ import React, {useState} from "react"
 import Project from "./projectComponent/project"
 import projectsDescription from "./projectComponent/projectsDescriptions/ProjectsDescpritions"
 import './projects.css'
+
 const RealLifeProjects = () => {
     return (
         <Project
@@ -9,6 +10,7 @@ const RealLifeProjects = () => {
             year="2024"
             descriptions={projectsDescription.ArqApp}
             skills={["React Native", "Node Js", "Vite", "Mongo", "Party!"]}
+            mediaLinks={[]}
         />
     );
 };
@@ -21,7 +23,11 @@ const CoolPersonalProjects = () => {
             descriptions={projectsDescription.MandiocaMod}
             skills={["Java", "Minecraft", "Gaming", "Cassava"]}
             link="https://www.curseforge.com/minecraft/mc-mods/mod-da-mandioca"
-            anchorText ="Mod_da_Mandioca.com"
+            anchorText="Mod_da_Mandioca.com"
+            mediaLinks={[
+                "src\\assets\\img\\ModMandica1.png",
+                "https://www.youtube.com/embed/gYlRnSLuWyo"
+            ]}
         />
     );
 };

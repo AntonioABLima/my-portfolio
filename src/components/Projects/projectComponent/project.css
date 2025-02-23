@@ -67,3 +67,21 @@ hr {
 .projectLink:hover{
 	color: rgb(255, 159, 175);
 }
+
+.media-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	gap: 24px;
+}
+
+.media {
+	height: auto;
+	width: clamp(0px,95vw,1200px);
+	box-shadow: 1px 1px #f6d4b1,6px 6px #52525240;
+}
+
+.youtube {
+	aspect-ratio: 16/9;
+}
