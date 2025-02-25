@@ -78,8 +78,8 @@ hr {
 
 .media {
 	height: auto;
-	width: clamp(0px,95vw,1200px);
-	box-shadow: 1px 1px #f6d4b1,6px 6px #52525240;
+	width: min(100%, clamp(0px, 95vw, 1200px));
+	box-shadow: 1px 1px #f6d4b1, 6px 6px #52525240;
 }
 
 .youtube {

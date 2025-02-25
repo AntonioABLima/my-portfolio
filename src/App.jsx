@@ -1,19 +1,16 @@
-import { useState } from 'react'
 import './App.css'
 import Navigation from './components/Navigation/navigation'
 import Projects from './components/Projects/projects'
 import Footer from './components/Footer/footer'
-import projectsDescription from './components/Projects/projectComponent/projectsDescriptions/ProjectsDescpritions'
-
+import { AboutMe } from './components/Projects/projectComponent/projectsDescriptions/ProjectsDescriptions'
 function App() {
-
 	return (
 		<>
 		<main>
 			<Navigation/>
 			<section>
 				<h1 id='aboutMe'>Hi there</h1>
-				{projectsDescription.AboutMe.map((text, index) => (
+				{AboutMe.map((text, index) => (
 					<p key={index}>
 					{index === 3 ? (
 						<>

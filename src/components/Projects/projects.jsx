@@ -1,34 +1,82 @@
 import React, {useState} from "react"
 import Project from "./projectComponent/project"
-import projectsDescription from "./projectComponent/projectsDescriptions/ProjectsDescpritions"
+import { RealProjectsDescription, CoolProjectsDescriptions } from "./projectComponent/projectsDescriptions/ProjectsDescriptions";
 import './projects.css'
 
 const RealLifeProjects = () => {
+
     return (
+        <>
         <Project
-            title="App for employee consumption"
+            title="Employees Consumption App "
             year="2024"
-            descriptions={projectsDescription.ArqApp}
-            skills={["React Native", "Node Js", "Vite", "Mongo", "Party!"]}
-            mediaLinks={[]}
-        />
+            descriptions={RealProjectsDescription.ArqApp}
+            skills={["React Native", "Node Js", "Vite", "MongoDB", "Party! 🎉"]}
+            mediaLinks={[]} />
+
+        <Project
+            title="Arduino Water System"
+            year="2023"
+            descriptions={RealProjectsDescription.WaterSystem}
+            skills={["Arduino", "Automation", "Gardening", "Bonsai 🪴"]}
+            link={'https://github.com/AntonioABLima/Projeto-Rega-Automatica'}
+            anchorText="arduino_codes.github"
+            mediaLinks={[
+                'src\\assets\\img\\WaterSystem.png',
+                'https://www.youtube.com/embed/frQBwNFcexE',
+            ]}/>
+
+        <Project
+            title="CEASA Web Scraping"
+            year="2021"
+            descriptions={RealProjectsDescription.WebScrapingCeasa}
+            skills={["Web", "Scraping", "Fruit and Vegetables 🍆"]}
+            mediaLinks={[]} />
+
+        <Project
+            title="Pdf to Excel"
+            year="2021"
+            descriptions={RealProjectsDescription.PdfToExcel}
+            skills={["Python", "Excel", "Automation 📑"]}
+            mediaLinks={[]}/>
+        </>
     );
 };
 
 const CoolPersonalProjects = () => {
     return (
-        <Project
-            title="Mandioca Mod"
+        <><Project
+            title="Advent of Coding"
             year="2024"
-            descriptions={projectsDescription.MandiocaMod}
-            skills={["Java", "Minecraft", "Gaming", "Cassava"]}
-            link="https://www.curseforge.com/minecraft/mc-mods/mod-da-mandioca"
-            anchorText="Mod_da_Mandioca.com"
-            mediaLinks={[
-                "src\\assets\\img\\ModMandica1.png",
-                "https://www.youtube.com/embed/gYlRnSLuWyo"
-            ]}
-        />
+            descriptions={CoolProjectsDescriptions.AoC24}
+            skills={["Programming Puzzles", "Advent calendar", 'Christmas 🎄']}
+            link="https://github.com/AntonioABLima/Advent-of-Code-2024"
+            anchorText="my_codes.github"
+            mediaLinks={['src\\assets\\img\\Aoc.png']} />
+            
+            <Project
+                title="Mandioca Mod"
+                year="2024"
+                descriptions={CoolProjectsDescriptions.MandiocaMod}
+                skills={["Java", "Minecraft", "Cassava", "Gaming 🕹️"]}
+                link="https://www.curseforge.com/minecraft/mc-mods/mod-da-mandioca"
+                anchorText="mod_da_mandioca.page"
+                mediaLinks={[
+                    "src\\assets\\img\\ModMandica1.png",
+                    "https://www.youtube.com/embed/gYlRnSLuWyo"
+                ]} />
+            <Project
+                title="Blink Counter"
+                year="2024"
+                descriptions={CoolProjectsDescriptions.ContadorPiscada}
+                skills={["Computer Vision", "Orochinho", "IA", "Blink 👀", ]}
+                link="https://github.com/AntonioABLima/Contador-De-Piscadas"
+                anchorText="contador_de_piscadas.github"
+                mediaLinks={[
+                    "src\\assets\\img\\Contador.gif",
+                    "https://www.youtube.com/embed/iftimDe8hzA"
+                ]} />
+            </>
     );
 };
 

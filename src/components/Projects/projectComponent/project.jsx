@@ -23,7 +23,7 @@ const Projeto = ({ title, year, descriptions, skills, link, anchorText, mediaLin
 			))}
 			{
 				link?  (
-					<p><a className='projectLink' href={link}>{anchorText}</a></p>
+					<p><a className='projectLink' href={link} target='_blank' rel='noopener noreferrer'>{anchorText}</a></p>
 				) : null
 			}
 			{mediaLinks.length > 0 && (
@@ -31,6 +31,7 @@ const Projeto = ({ title, year, descriptions, skills, link, anchorText, mediaLin
 					{mediaLinks.map((mediaLink, index) => (
 						isYouTubeLink(mediaLink) ? (
 							<iframe 
+								key={index}
 								className="media youtube"
 								src={mediaLink} 
 								frameBorder="0" 
