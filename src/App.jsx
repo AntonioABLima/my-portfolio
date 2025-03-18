@@ -1,11 +1,14 @@
-import './App.css'
 import Navigation from './components/Navigation/navigation'
 import Projects from './components/Projects/projects'
 import Footer from './components/Footer/footer'
 import { AboutMe } from './components/Projects/projectComponent/projectsDescriptions/ProjectsDescriptions'
+import ThreeScene from './components/ThreeJs/ThreeScene'
+import './App.css'
+
 function App() {
 	return (
 		<>
+		<ThreeScene/>
 		<main>
 			<Navigation/>
 			<section>
