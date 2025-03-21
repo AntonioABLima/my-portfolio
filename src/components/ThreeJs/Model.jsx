@@ -12,33 +12,40 @@ export default function Model() {
     
     const groupRef = useRef();
     
-    useEffect(() => {
-        if(!groupRef.current) return;
+    // useEffect(() => {
+    //     if (!groupRef.current) return;
+    
+    //     gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: '#section0',
+    //             start: 'top top',
+    //             end: 'bottom bottom',
+    //             scrub: true,
+    //             markers: true,
+    //         },
+    //     })
+    //     .to(groupRef.current.rotation, {
+    //         y: -(Math.PI / 4),
+    //     }, 0)
+    //     .to(groupRef.current.position, {
+    //         z: 3, 
+    //         x: 2.5,
+    //         y: 3,
+    //     }, 0)
+    //     .to(groupRef.current.position, {
+    //         y: 1,
+    //     }, 1)
+    //     .to(groupRef.current.rotation, {
+    //         z: (Math.PI / 4),
+    //     }, 1)
 
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '#section0',
-                start: 'top top',
-                end: "bottom top",
-                scrub: true,
-            }
-        })
-        .to(
-            groupRef.current.rotation,
-            {
-                y: Math.PI / 4,
-                ease: 'power2.inOut'
-            }
-        );
-    })
+    // }, []);
         
     return (
         <group 
             ref={groupRef}
-                position={[0, -1, 0]}
-
+                position={[0, 0, 0]}
             >
-
             <primitive object={scene} />
         </group>
     )
