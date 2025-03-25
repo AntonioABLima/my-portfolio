@@ -11,7 +11,7 @@ export const CameraAnimation = () => {
 
     useFrame(() => {
         camera.lookAt(lookAtTarget.current.x, lookAtTarget.current.y, lookAtTarget.current.z);
-        console.log(`${lookAtTarget.current.x}, ${lookAtTarget.current.y}, ${lookAtTarget.current.z}\n${camera.position.x}, ${camera.position.y}, ${camera.position.x}`)
+        // console.log(`${lookAtTarget.current.x}, ${lookAtTarget.current.y}, ${lookAtTarget.current.z}\n${camera.position.x}, ${camera.position.y}, ${camera.position.x}`)
     });
 
     useEffect(() => {
@@ -20,8 +20,7 @@ export const CameraAnimation = () => {
                 trigger: '#section0',
                 start: 'top top',
                 end: 'bottom bottom',
-                scrub: 1,
-                markers: true,
+                scrub: 0.2,
             },
         });
 

@@ -10,7 +10,8 @@ function App() {
 		<>
 		<main>
 			<Navigation/>
-			<section id="section0" style={{ height: '400vh'}}/>
+			<ThreeScene />
+			<div id="section0" style={{ height: '400vh'}}/>
 			<section id="section1">
 				<h1 id='aboutMe'>Hi there</h1>
 				{AboutMe.map((text, index) => (
@@ -35,7 +36,6 @@ function App() {
 			</section>
 			<Footer></Footer>
 		</main>
-		<ThreeScene />
         </>
     )
 }
