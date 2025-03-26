@@ -1,38 +1,38 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { EffectComposer, Bloom, Vignette, Noise, HueSaturation } from '@react-three/postprocessing';
 import { CameraAnimation } from './CameraAnimation';
 import { ResponsiveCamera } from './ResponsiveCamera';
 import Model from './Model';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
+gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const ThreeScene = () => {
+	const [showImage, setShowImage] = useState(false);
 	const canvasRef = useRef(null);
-	console.log(devicePixelRatio)
+	const tl = useRef(); 
 
-	useEffect(() => {
-		const fadeTimeline = gsap.timeline({
+	useGSAP(() => {
+		tl.current = gsap
+		.timeline({
 			scrollTrigger: {
 				trigger: '#section1', 
 				start: 'top 65%',
 				end: 'top top', 
 				scrub: 0.5,
 			},
-		});
-
-		fadeTimeline.to(canvasRef.current, {
+		})
+		.to(canvasRef.current, {
 			opacity: 0,
 			duration: 1,
 			ease: 'power2.out',
 		});
 
-		return () => {
-			fadeTimeline.kill();
-		};
-	}, []);
+	}, {});
 
 	return (
 		<div
@@ -56,7 +56,7 @@ const ThreeScene = () => {
 				<ambientLight intensity={1} />
 				<Model />
 				<ResponsiveCamera />
-				<CameraAnimation />
+				<CameraAnimation setShowImage={setShowImage}/>
 				<EffectComposer>
 					<Bloom intensity={0.03} luminanceThreshold={0.8} luminanceSmoothing={0.5} />
 					<Vignette offset={0.2} darkness={0.7} eskil={false} />
@@ -64,6 +64,11 @@ const ThreeScene = () => {
 					<Noise opacity={0.005} />
 				</EffectComposer>
 			</Canvas>
+			{showImage && (
+				<div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+					<img src="src\assets\img\Portrait.webp" alt="Sua Imagem" />
+				</div>
+			)}
 		</div>
 	);
 };
