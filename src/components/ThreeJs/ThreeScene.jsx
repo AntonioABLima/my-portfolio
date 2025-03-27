@@ -12,7 +12,6 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const ThreeScene = () => {
-	const [showImage, setShowImage] = useState(false);
 	const canvasRef = useRef(null);
 	const tl = useRef(); 
 
@@ -54,9 +53,9 @@ const ThreeScene = () => {
 				gl={{ antialias: true }}
 			>
 				<ambientLight intensity={1} />
-				<Model />
 				<ResponsiveCamera />
-				<CameraAnimation setShowImage={setShowImage}/>
+				<Model />
+				<CameraAnimation />
 				<EffectComposer>
 					<Bloom intensity={0.03} luminanceThreshold={0.8} luminanceSmoothing={0.5} />
 					<Vignette offset={0.2} darkness={0.7} eskil={false} />
@@ -64,11 +63,6 @@ const ThreeScene = () => {
 					<Noise opacity={0.005} />
 				</EffectComposer>
 			</Canvas>
-			{showImage && (
-				<div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-					<img src="src\assets\img\Portrait.webp" alt="Sua Imagem" />
-				</div>
-			)}
 		</div>
 	);
 };
