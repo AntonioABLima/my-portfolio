@@ -19,6 +19,12 @@ section::after {
 	width: clamp(0px,95vw,680px);
 }
 
+#section1{
+	margin-top: 40%;
+	/* background-color: aqua; */
+	
+}
+
 #contact {
 	margin-bottom: 0px;
 }

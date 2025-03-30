@@ -20,7 +20,7 @@ const ThreeScene = () => {
 		.timeline({
 			scrollTrigger: {
 				trigger: '#section1', 
-				start: 'top 65%',
+				start: 'top 85%',
 				end: 'top top', 
 				scrub: 0.5,
 			},
@@ -52,7 +52,7 @@ const ThreeScene = () => {
 				dpr={[1, window.devicePixelRatio]}
 				gl={{ antialias: true }}
 			>
-				<ambientLight intensity={1} />
+				<ambientLight intensity={3} />
 				<ResponsiveCamera />
 				<Model />
 				<CameraAnimation />
