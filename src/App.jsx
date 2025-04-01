@@ -9,7 +9,7 @@ function App() {
 	return (
 		<>
 		<main>
-			<Navigation/>
+			<Navigation />
 			<ThreeScene />
 			<div id="section0" style={{ height: '400vh'}}/>
 			<section id="section1">

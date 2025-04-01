@@ -7,6 +7,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 useGLTF.preload("src/assets/models/TesteWebP.glb");
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 export default function Model() {
     const { scene } = useGLTF("src/assets/models/TestWebP.glb");
@@ -22,14 +23,14 @@ export default function Model() {
 
         if (size.width < 600) {
             scale = 1;
-            posY = 0.7;
+            posY = 0.72;
         } else {
             scale = 1.2;
             posY = 0.8;
         }
 
         myselfObj.scale.set(scale, scale, scale);
-        myselfObj.position.set(-0.7, posY, 0.42);
+        myselfObj.position.set(-0.7, posY, 0.43);
 
         material.roughness = 1;
         material.metalness = 0.1;

@@ -7,13 +7,15 @@ import Model from './Model';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import ScrollIndicator from '../ScrollIndicator';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const ThreeScene = () => {
-	const canvasRef = useRef(null);
 	const tl = useRef(); 
+	const canvasRef = useRef(null);
+	const scrollIndicatorRef = useRef(null);
 
 	useGSAP(() => {
 		tl.current = gsap
@@ -30,17 +32,47 @@ const ThreeScene = () => {
 			duration: 1,
 			ease: 'power2.out',
 		});
+		
+		gsap.timeline({
+			scrollTrigger: {
+				trigger: '#section0', 
+				start: 'top top',
+				toggleActions: "play none none reverse", 
+			},
+		})
+		.to(scrollIndicatorRef.current, {
+			opacity: 0,   
+			duration: 0.2,
+			ease: 'power1',
+		});
+
+		gsap.timeline({
+			scrollTrigger: {
+				trigger: "#section0",
+				start: "bottom-=1100 top",
+				end: "bottom-=900 top",
+				markers: true,
+				toggleActions: "play reverse play reverse", 
+			},
+		})
+		.to(scrollIndicatorRef.current, {
+			opacity: 1,
+			duration: 0.2,
+			ease: "power1",
+		});
 
 	}, {});
 
 	return (
+		<>
+		<ScrollIndicator ref={scrollIndicatorRef}/>
 		<div
 			ref={canvasRef}
 			style={{
 				position: 'fixed',
 				inset: 0,
 				opacity: 1,
-				pointerEvents: 'none', 
+				pointerEvents: 'none',
 			}}
 		>
 			<Canvas
@@ -64,6 +96,7 @@ const ThreeScene = () => {
 				</EffectComposer>
 			</Canvas>
 		</div>
+		</>
 	);
 };
 

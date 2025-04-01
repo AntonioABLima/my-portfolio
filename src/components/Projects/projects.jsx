@@ -8,7 +8,7 @@ const RealLifeProjects = () => {
     return (
         <>
         <Project
-            title="Employees Consumption App "
+            title="Employees Consumption App"
             year="2024"
             descriptions={RealProjectsDescription.ArqApp}
             skills={["React Native", "Node Js", "Vite", "MongoDB", "Party! 🎉"]}
