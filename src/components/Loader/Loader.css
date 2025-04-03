@@ -19,7 +19,7 @@
     padding: 20px;
 }
 .title-text {
-    font-size: 42px;
+    font-size: clamp(24px, 5vw, 42px);
     text-align: left;
     margin: 0;
     padding-left: 0;
@@ -51,7 +51,7 @@
 .loader-text {
     font-family: 'Press Start 2P', cursive;
     color: var(--background-color);
-    font-size: 12px;
+    font-size: clamp(6px, 2vw, 12px);
     text-shadow: 2px 2px #000;
     margin: 0;
     padding-left: 0;
