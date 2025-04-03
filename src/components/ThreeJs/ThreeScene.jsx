@@ -27,6 +27,21 @@ const ThreeScene = ({ setProgress }) => {
 
 	useEffect(() => {
         setProgress(progress);
+		
+		if (progress == 100){
+
+			gsap.to(canvasRef.current, {
+				opacity: 1,
+				duration: 1.5,
+				ease: 'power.out',
+			});
+
+			gsap.to(scrollIndicatorRef.current, {
+				opacity: 1,
+				duration: 1.5,
+				ease: 'power.out',
+			});
+		}
     }, [progress, setProgress]);
 
     useGSAP(() => {
@@ -73,18 +88,18 @@ const ThreeScene = ({ setProgress }) => {
 
     return (
         <>
-            <ScrollIndicator ref={scrollIndicatorRef} />
+            <ScrollIndicator ref={scrollIndicatorRef}/>
             <div
                 ref={canvasRef}
                 style={{
                     position: "fixed",
                     inset: 0,
-                    opacity: 1,
+                    opacity: 0,
                     pointerEvents: "none",
                 }}
             >
                 <Canvas
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "100%", height: "100%"}}
                     camera={{
                         position: [4, 4, 4],
                         fov: 45,
