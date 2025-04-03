@@ -8,9 +8,16 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollIndicator from '../ScrollIndicator';
+import { Html, useProgress } from '@react-three/drei'
+import { Suspense } from 'react';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
+
+function Loader() {
+	const { progress } = useProgress()
+	return <Html center>{progress} % loaded</Html>
+}
 
 const ThreeScene = () => {
 	const tl = useRef(); 
@@ -51,7 +58,6 @@ const ThreeScene = () => {
 				trigger: "#section0",
 				start: "bottom-=1100 top",
 				end: "bottom-=900 top",
-				markers: true,
 				toggleActions: "play reverse play reverse", 
 			},
 		})
@@ -86,13 +92,15 @@ const ThreeScene = () => {
 			>
 				<ambientLight intensity={3} />
 				<ResponsiveCamera />
-				<Model />
+				<Suspense fallback={<Loader />}>
+					<Model />
+				</Suspense>
 				<CameraAnimation />
 				<EffectComposer>
 					<Bloom intensity={0.03} luminanceThreshold={0.8} luminanceSmoothing={0.5} />
 					<Vignette offset={0.2} darkness={0.7} eskil={false} />
 					<HueSaturation hue={0} saturation={-0.05} />
-					<Noise opacity={0.005} />
+					<Noise opacity={0.005} /> 
 				</EffectComposer>
 			</Canvas>
 		</div>
