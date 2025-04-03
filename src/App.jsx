@@ -4,13 +4,19 @@ import Footer from './components/Footer/footer'
 import { AboutMe } from './components/Projects/projectComponent/projectsDescriptions/ProjectsDescriptions'
 import ThreeScene from './components/ThreeJs/ThreeScene'
 import './App.css'
+import Loader from './components/Loader/Loader'
+import { useState } from 'react'
 
 function App() {
+	const [progress, setProgress] = useState(0);
+
 	return (
 		<>
 		<main>
 			<Navigation />
-			<ThreeScene />
+			{progress < 100 && <Loader progress={progress}/>}
+            <ThreeScene setProgress={setProgress} />
+
 			<div id="section0" style={{ height: '400vh'}}/>
 			<section id="section1">
 				<h1 id='aboutMe'>Hi there</h1>

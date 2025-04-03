@@ -18,22 +18,12 @@ export default function Model() {
     const material = myselfObj.material;
     
     useEffect(() => {
-        let scale = 0;
-        let posY = 0;
-
-        if (size.width < 600) {
-            scale = 1;
-            posY = 0.72;
-        } else {
-            scale = 1.2;
-            posY = 0.8;
-        }
+        let scale = size.width < 600 ? 1 : 1.2;
+        let posY = size.width < 600 ? 0.72 : 0.8;
 
         myselfObj.scale.set(scale, scale, scale);
         myselfObj.position.set(-0.7, posY, 0.43);
 
-        material.roughness = 1;
-        material.metalness = 0.1;
     }, [scene, size]); 
 
     useGSAP(() => {
@@ -50,7 +40,7 @@ export default function Model() {
     }, [scene]);
 
     return (
-        <group ref={groupRef} position={[0, 0, 0]}>
+        <group ref={groupRef} position={[0, 0, 0]} >
             <primitive object={scene} />
         </group>
     );
