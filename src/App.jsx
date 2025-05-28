@@ -5,9 +5,13 @@ import { AboutMe } from './components/Projects/projectComponent/projectsDescript
 import ThreeScene from './components/ThreeJs/ThreeScene'
 import './App.css'
 import Loader from './components/Loader/Loader'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
+	useEffect(() => {
+    	window.scrollTo(0, 0);
+  	}, []);
+
 	const [progress, setProgress] = useState(0);
 
 	return (
