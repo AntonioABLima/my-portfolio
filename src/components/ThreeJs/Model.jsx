@@ -16,8 +16,11 @@ export default function Model() {
 
     const myselfObj = scene.getObjectByName("Myself");
     const material = myselfObj.material;
+
+    const emissive = scene.getObjectByName("Lower_Window_Emissive");
     
     useEffect(() => {
+        console.log(scene)
         let scale = size.width < 600 ? 1 : 1.2;
         let posY = size.width < 600 ? 0.72 : 0.8;
 
@@ -27,7 +30,10 @@ export default function Model() {
     }, [scene, size]); 
 
     useGSAP(() => {
+        emissive.material.emissiveIntensity = 0;
+        emissive.material.opacity = 0;
         material.opacity = 0;
+
         gsap.timeline({
             scrollTrigger: {
                 trigger: "#section0", 

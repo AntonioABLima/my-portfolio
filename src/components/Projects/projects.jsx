@@ -8,11 +8,24 @@ const RealLifeProjects = () => {
     return (
         <>
         <Project
+            title="My Own Portfolio"
+            year="2025"
+            descriptions={RealProjectsDescription.MyPortifolio}
+            skills={["Three.js", "GSAP", "Blender", "Website! 🖼️"]}
+            link={'https://github.com/AntonioABLima/my-portfolio'}
+            anchorText="portfolio_code.github"
+            mediaLinks={[
+                'src\\assets\\img\\PortfolioBedroom.webp'
+            ]} 
+        />
+
+        <Project
             title="Employees Consumption App"
             year="2024"
             descriptions={RealProjectsDescription.ArqApp}
             skills={["React Native", "Node Js", "Vite", "MongoDB", "Party! 🎉"]}
-            mediaLinks={[]} />
+            mediaLinks={[]} 
+        />
 
         <Project
             title="Arduino Water System"
@@ -24,21 +37,24 @@ const RealLifeProjects = () => {
             mediaLinks={[
                 'src\\assets\\img\\WaterSystem.png',
                 'https://www.youtube.com/embed/frQBwNFcexE',
-            ]}/>
+            ]}
+        />
 
         <Project
             title="CEASA Web Scraping"
             year="2021"
             descriptions={RealProjectsDescription.WebScrapingCeasa}
             skills={["Web", "Scraping", "Fruit and Vegetables 🍆"]}
-            mediaLinks={[]} />
+            mediaLinks={[]} 
+        />
 
         <Project
             title="Pdf to Excel"
             year="2021"
             descriptions={RealProjectsDescription.PdfToExcel}
             skills={["Python", "Excel", "Automation 📑"]}
-            mediaLinks={[]}/>
+            mediaLinks={[]}
+        />
         </>
     );
 };

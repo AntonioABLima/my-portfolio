@@ -8,6 +8,12 @@ export const AboutMe =  [
 ];
 
 export const RealProjectsDescription = {
+    MyPortifolio: [
+        'The project was created by combining things I have learned throughout my career, such as 3D modeling and web development. Here I have added elements of my personality and where I spend most of my time, my bedroom, as well as my "artistic touch" (ironic).',
+        'Here I intend to share summaries of projects that I find relevant or at least interesting over time. If you want to take a look behind the scenes, just access the link below.',
+        'Now I have a website to call my own!',
+
+    ],
     ArqApp: [
         'An application to manage employee consumption in a nightclub franchise, implemented in two cities. With around 110 users and 19K+ entries saved in the database so far.',
         'The application has an API in the cloud, a mobile app made with React Native and a web dashboard for admin control.'

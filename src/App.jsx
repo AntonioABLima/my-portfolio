@@ -14,7 +14,7 @@ function App() {
 		<>
 		<main>
 			<Navigation />
-			{progress <= 100 && <Loader progress={progress}/>}
+			{progress < 100 && <Loader progress={progress}/>}
             <ThreeScene setProgress={setProgress} />
 
 			<div id="section0" style={{ height: '400vh'}}/>
