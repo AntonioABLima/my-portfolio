@@ -8,11 +8,24 @@ import Loader from './components/Loader/Loader'
 import { useState, useEffect } from 'react'
 
 function App() {
+	const [progress, setProgress] = useState(0);
+	
+	useEffect(() => {
+		if (progress < 100) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+
+		return () => {
+			document.body.style.overflow = '';
+		};
+	}, [progress]);
+
 	useEffect(() => {
     	window.scrollTo(0, 0);
   	}, []);
 
-	const [progress, setProgress] = useState(0);
 
 	return (
 		<>
