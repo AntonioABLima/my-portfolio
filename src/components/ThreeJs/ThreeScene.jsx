@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, Suspense } from "react";
+import { useEffect, useRef, Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
     EffectComposer,
@@ -14,37 +14,51 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import ScrollIndicator from "../ScrollIndicator";
+import Loader from "../Loader/Loader";
 import { useProgress } from "@react-three/drei";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-const ThreeScene = ({ setProgress }) => {
-    const { progress } = useProgress();
-	const tl = useRef();
+const ThreeScene = () => {
+    const { progress, active } = useProgress(); 
+    const [isLoaded, setIsLoaded] = useState(false);
+    const tl = useRef();
+
+    useEffect(() => {
+		const newOverflow = active ? 'hidden' : '';
+		
+		if (document.body.style.overflow !== newOverflow) {
+			document.body.style.overflow = newOverflow;
+		}
+		return () => {
+			document.body.style.overflow = '';
+		};
+	}, [progress]);
+    
     const canvasRef = useRef(null);
     const scrollIndicatorRef = useRef(null);
 
-	useEffect(() => {
-        setProgress(progress);
-		
-		if (progress == 100){
+    useEffect(() => {
+        if (!active) {
+            setTimeout(() => {
+                setIsLoaded(true); 
+                gsap.to(canvasRef.current, {
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power.out",
+                });
 
-			gsap.to(canvasRef.current, {
-				opacity: 1,
-				duration: 1.5,
-				ease: 'power.out',
-			});
+                gsap.to(scrollIndicatorRef.current, {
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power.out",
+                });
+            }, 500);
+        }
+    }, [active]);
 
-			gsap.to(scrollIndicatorRef.current, {
-				opacity: 1,
-				duration: 1.5,
-				ease: 'power.out',
-			});
-		}
-    }, [progress, setProgress]);
-
-    useGSAP(() => {
+     useGSAP(() => {
         tl.current = gsap
             .timeline({
                 scrollTrigger: {
@@ -84,22 +98,25 @@ const ThreeScene = ({ setProgress }) => {
             duration: 0.2,
             ease: "power1",
         });
-    }, {});
+    }, []);
 
     return (
         <>
-            <ScrollIndicator ref={scrollIndicatorRef}/>
+            <ScrollIndicator ref={scrollIndicatorRef} />
+            {!isLoaded && <Loader />}
             <div
                 ref={canvasRef}
                 style={{
                     position: "fixed",
                     inset: 0,
                     opacity: 0,
-                    pointerEvents: "none",
+                    height: "100vh",
+                    width: "100vw",
+                    pointerEvents: isLoaded ? 'auto' : 'none',
                 }}
             >
                 <Canvas
-                    style={{ width: "100%", height: "100%"}}
+                    style={{ width: "100%", height: "100%" }}
                     camera={{
                         position: [4, 4, 4],
                         fov: 45,
@@ -107,13 +124,12 @@ const ThreeScene = ({ setProgress }) => {
                     dpr={[1, window.devicePixelRatio]}
                     gl={{ antialias: true }}
                 >
-                    <ambientLight intensity={3} />
                     <ResponsiveCamera />
-
-					<Model />
-
+                    <Suspense fallback={null}>
+                        <ambientLight intensity={3} />
+                        <Model />
+                    </Suspense>
                     <CameraAnimation />
-
                     <EffectComposer>
                         <Bloom intensity={0.03} luminanceThreshold={0.8} luminanceSmoothing={0.5} />
                         <Vignette offset={0.2} darkness={0.7} eskil={false} />

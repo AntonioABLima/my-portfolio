@@ -31,6 +31,7 @@ const Projeto = ({ title, year, descriptions, skills, link, anchorText, mediaLin
 					{mediaLinks.map((mediaLink, index) => (
 						isYouTubeLink(mediaLink) ? (
 							<iframe 
+								loading="lazy"
 								key={index}
 								className="media youtube"
 								src={mediaLink} 
@@ -40,7 +41,13 @@ const Projeto = ({ title, year, descriptions, skills, link, anchorText, mediaLin
 								allowFullScreen
 							/>
 						) : (
-							<img className="media" key={index} src={mediaLink} alt={`Project media ${mediaLink}`}/>
+							<img 
+								loading="lazy"
+								className="media" 
+								key={index} 
+								src={mediaLink} 
+								alt={`Project media ${mediaLink}`}
+							/>
 						)
 					))}
 				</div>

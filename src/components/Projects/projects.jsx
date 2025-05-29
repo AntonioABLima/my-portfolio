@@ -35,7 +35,7 @@ const RealLifeProjects = () => {
             link={'https://github.com/AntonioABLima/Projeto-Rega-Automatica'}
             anchorText="arduino_codes.github"
             mediaLinks={[
-                '/images/WaterSystem.png',
+                '/images/WaterSystem.webp',
                 'https://www.youtube.com/embed/frQBwNFcexE',
             ]}
         />
@@ -89,7 +89,7 @@ const CoolPersonalProjects = () => {
                 link="https://github.com/AntonioABLima/Contador-De-Piscadas"
                 anchorText="contador_de_piscadas.github"
                 mediaLinks={[
-                    "/images/Contador.gif",
+                    "/images/Contador.webp",
                     "https://www.youtube.com/embed/iftimDe8hzA"
                 ]} />
             </>

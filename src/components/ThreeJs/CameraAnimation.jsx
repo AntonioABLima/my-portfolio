@@ -15,12 +15,12 @@ export const CameraAnimation = () => {
     useFrame(() => {
         camera.lookAt(lookAtTarget.current.x, lookAtTarget.current.y, lookAtTarget.current.z);
     });
+    
+    const midPosition = { x: 1.6, y: 0.9, z: 1.6 };
+    const finalPosition = { x: 0.615, y: 0.8, z: 0.44 };
+    const finalLookAt = { x: -0.615, y: 0.8, z: 0.44 };
 
     useGSAP(() => {
-        const midPosition = { x: 1.6, y: 0.9, z: 1.6 };
-        const finalPosition = { x: 0.615, y: 0.8, z: 0.44 };
-        const finalLookAt = { x: -0.615, y: 0.8, z: 0.44 };
-
         tl.current = gsap
             .timeline({
                 scrollTrigger: {
@@ -34,6 +34,7 @@ export const CameraAnimation = () => {
             .to(lookAtTarget.current, { y: 0.8, duration: 0.5 }, 0)
             .to(camera.position, { ...finalPosition, duration: 0.5 }, 0.5)
             .to(lookAtTarget.current, { ...finalLookAt, duration: 0.5 }, 0.5)
+
     }, []);
 
     return null;

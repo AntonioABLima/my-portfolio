@@ -4,23 +4,13 @@ import Footer from './components/Footer/footer'
 import { AboutMe } from './components/Projects/projectComponent/projectsDescriptions/ProjectsDescriptions'
 import ThreeScene from './components/ThreeJs/ThreeScene'
 import './App.css'
-import Loader from './components/Loader/Loader'
-import { useState, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+
 
 function App() {
-	const [progress, setProgress] = useState(0);
-	
-	useEffect(() => {
-		if (progress < 100) {
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = '';
-		}
-
-		return () => {
-			document.body.style.overflow = '';
-		};
-	}, [progress]);
+	const renderCount = useRef(0);
+	renderCount.current += 1;
+	console.log("Renderizações do App:", renderCount.current);
 
 	useEffect(() => {
     	window.scrollTo(0, 0);
@@ -31,8 +21,8 @@ function App() {
 		<>
 		<main>
 			<Navigation />
-			{progress < 100 && <Loader progress={progress}/>}
-            <ThreeScene setProgress={setProgress} />
+
+            <ThreeScene />
 
 			<div id="section0" style={{ height: '400vh'}}/>
 			<section id="section1">

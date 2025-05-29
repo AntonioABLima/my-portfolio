@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect, memo } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useThree } from '@react-three/fiber';
 import gsap from "gsap";
@@ -20,7 +20,6 @@ export default function Model() {
     const emissive = scene.getObjectByName("Lower_Window_Emissive");
     
     useEffect(() => {
-        console.log(scene)
         let scale = size.width < 600 ? 1 : 1.2;
         let posY = size.width < 600 ? 0.72 : 0.8;
 

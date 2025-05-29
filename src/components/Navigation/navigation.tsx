@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState, memo } from "react";
 import './navigation.css'
 
-const Navigation = () => {
+const Navigation = memo(() => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -44,9 +44,8 @@ const Navigation = () => {
                 <a href="#contact" onClick={() => toggleMenu()}>Contact</a>
             </div>
  
-            {/* <div id="tip-scroll">Scroll ↓</div> */}
         </nav>
     );
-};
+});
 
 export default Navigation;

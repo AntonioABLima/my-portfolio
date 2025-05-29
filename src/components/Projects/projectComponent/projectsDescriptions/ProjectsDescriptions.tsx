@@ -1,5 +1,3 @@
-import React from "react";
-
 export const AboutMe =  [
     'I grew up in the huge (sarcasm) city of Uberlândia and like every nerdy kid, I was always fascinated by computers and technology in general. After a few years using my PC just to play for hours on end, the time came to choose a career and I just knew it had to be something to do with computers.',
     'In the computer engineering course I wrote my first code and it seemed to me like a blank sheet where I could write anything my imagination wanted, and any doubt I once had became one of the greatest certainties.',
