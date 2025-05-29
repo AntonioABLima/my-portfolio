@@ -57,7 +57,8 @@ function App() {
 				<p style={{textAlign: 'center'}}>Reach out on <a className='link' href="https://www.linkedin.com/in/ant%C3%B4nio-alexandre-borges-lima/" target='_blank' rel='noopener noreferrer'><b>LinkedIn</b></a>
 				</p>
 			</section>
-			<Footer></Footer>
+			
+			<Footer/>
 		</main>
         </>
     )

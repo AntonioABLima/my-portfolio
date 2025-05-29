@@ -15,7 +15,7 @@ const RealLifeProjects = () => {
             link={'https://github.com/AntonioABLima/my-portfolio'}
             anchorText="portfolio_code.github"
             mediaLinks={[
-                'src\\assets\\img\\PortfolioBedroom.webp'
+                '/images/PortfolioBedroom.webp'
             ]} 
         />
 
@@ -35,7 +35,7 @@ const RealLifeProjects = () => {
             link={'https://github.com/AntonioABLima/Projeto-Rega-Automatica'}
             anchorText="arduino_codes.github"
             mediaLinks={[
-                'src\\assets\\img\\WaterSystem.png',
+                '/images/WaterSystem.png',
                 'https://www.youtube.com/embed/frQBwNFcexE',
             ]}
         />
@@ -68,7 +68,7 @@ const CoolPersonalProjects = () => {
             skills={["Programming Puzzles", "Advent calendar", 'Christmas 🎄']}
             link="https://github.com/AntonioABLima/Advent-of-Code-2024"
             anchorText="my_codes.github"
-            mediaLinks={['src\\assets\\img\\Aoc.png']} />
+            mediaLinks={['/images/Aoc.png']} />
             
             <Project
                 title="Mandioca Mod"
@@ -78,7 +78,7 @@ const CoolPersonalProjects = () => {
                 link="https://www.curseforge.com/minecraft/mc-mods/mod-da-mandioca"
                 anchorText="mod_da_mandioca.page"
                 mediaLinks={[
-                    "src\\assets\\img\\ModMandica1.png",
+                    "/images/ModMandica1.png",
                     "https://www.youtube.com/embed/gYlRnSLuWyo"
                 ]} />
             <Project
@@ -89,7 +89,7 @@ const CoolPersonalProjects = () => {
                 link="https://github.com/AntonioABLima/Contador-De-Piscadas"
                 anchorText="contador_de_piscadas.github"
                 mediaLinks={[
-                    "src\\assets\\img\\Contador.gif",
+                    "/images/Contador.gif",
                     "https://www.youtube.com/embed/iftimDe8hzA"
                 ]} />
             </>
