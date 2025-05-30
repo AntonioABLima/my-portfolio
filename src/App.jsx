@@ -21,9 +21,7 @@ function App() {
 		<>
 		<main>
 			<Navigation />
-
             <ThreeScene />
-
 			<div id="section0" style={{ height: '400vh'}}/>
 			<section id="section1">
 				<h1 id='aboutMe'>Hi there</h1>

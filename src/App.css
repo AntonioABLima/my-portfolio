@@ -1,13 +1,14 @@
 main {
 	text-align: center;
 	position: relative;
-	z-index: 2;
 }
 
 section {
     padding-bottom: 64px;
     margin-bottom: 80px;
     position: relative;
+	z-index: 2;
+
 }
 
 section::after {

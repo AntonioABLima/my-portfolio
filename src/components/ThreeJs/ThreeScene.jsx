@@ -23,7 +23,6 @@ gsap.registerPlugin(ScrollTrigger);
 const ThreeScene = () => {
     const { progress, active } = useProgress(); 
     const [isLoaded, setIsLoaded] = useState(false);
-    const tl = useRef();
 
     useEffect(() => {
 		const newOverflow = active ? 'hidden' : '';
@@ -36,6 +35,7 @@ const ThreeScene = () => {
 		};
 	}, [progress]);
     
+    const opacityMaskRef = useRef(null);
     const canvasRef = useRef(null);
     const scrollIndicatorRef = useRef(null);
 
@@ -58,35 +58,35 @@ const ThreeScene = () => {
         }
     }, [active]);
 
-     useGSAP(() => {
-        tl.current = gsap
-            .timeline({
-                scrollTrigger: {
-                    trigger: "#section1",
-                    start: "top 85%",
-                    end: "top top",
-                    scrub: 0.5,
-                },
-            })
-            .to(canvasRef.current, {
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out",
-            });
+    useGSAP(() => {
+        const tl1 = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#section1",
+                start: "top 85%",
+                end: "top top",
+                scrub: 0.5,
+                markers: true,
+            }
+        }).to(opacityMaskRef.current, {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+        });
 
-        gsap.timeline({
+
+        const tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: "#section0",
                 start: "top top",
                 toggleActions: "play none none reverse",
-            },
+            }
         }).to(scrollIndicatorRef.current, {
             opacity: 0,
             duration: 0.2,
             ease: "power1",
         });
 
-        gsap.timeline({
+        const tl3 = gsap.timeline({
             scrollTrigger: {
                 trigger: "#section0",
                 start: "bottom-=1100 top",
@@ -98,12 +98,29 @@ const ThreeScene = () => {
             duration: 0.2,
             ease: "power1",
         });
+
+        return () => {
+            tl1.kill()
+            tl2.kill();
+            tl3.kill();
+        };
     }, []);
 
     return (
         <>
             <ScrollIndicator ref={scrollIndicatorRef} />
             {!isLoaded && <Loader />}
+            <div
+                ref={opacityMaskRef}
+                style={{
+                    position: "fixed",
+                    inset: 0,
+                    opacity: 0,
+                    height: "100vh",
+                    width: "100vw",
+                    backgroundColor: "var(--background-color)",
+                    zIndex: 1
+                }}/>
             <div
                 ref={canvasRef}
                 style={{
@@ -112,7 +129,6 @@ const ThreeScene = () => {
                     opacity: 0,
                     height: "100vh",
                     width: "100vw",
-                    pointerEvents: isLoaded ? 'auto' : 'none',
                 }}
             >
                 <Canvas
@@ -125,11 +141,13 @@ const ThreeScene = () => {
                     gl={{ antialias: true }}
                 >
                     <ResponsiveCamera />
+                    <CameraAnimation />
+                    
                     <Suspense fallback={null}>
                         <ambientLight intensity={3} />
                         <Model />
                     </Suspense>
-                    <CameraAnimation />
+                    
                     <EffectComposer>
                         <Bloom intensity={0.03} luminanceThreshold={0.8} luminanceSmoothing={0.5} />
                         <Vignette offset={0.2} darkness={0.7} eskil={false} />
