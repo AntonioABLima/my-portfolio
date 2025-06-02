@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import {useState} from "react"
 import Project from "./projectComponent/project"
 import { RealProjectsDescription, CoolProjectsDescriptions } from "./projectComponent/projectsDescriptions/ProjectsDescriptions";
 import './projects.css'
@@ -61,7 +61,8 @@ const RealLifeProjects = () => {
 
 const CoolPersonalProjects = () => {
     return (
-        <><Project
+        <>
+        <Project
             title="Advent of Coding"
             year="2024"
             descriptions={CoolProjectsDescriptions.AoC24}
@@ -70,29 +71,30 @@ const CoolPersonalProjects = () => {
             anchorText="my_codes.github"
             mediaLinks={['/images/Aoc.png']} />
             
-            <Project
-                title="Mandioca Mod"
-                year="2024"
-                descriptions={CoolProjectsDescriptions.MandiocaMod}
-                skills={["Java", "Minecraft", "Cassava", "Gaming 🕹️"]}
-                link="https://www.curseforge.com/minecraft/mc-mods/mod-da-mandioca"
-                anchorText="mod_da_mandioca.page"
-                mediaLinks={[
-                    "/images/ModMandica1.png",
-                    "https://www.youtube.com/embed/gYlRnSLuWyo"
-                ]} />
-            <Project
-                title="Blink Counter"
-                year="2024"
-                descriptions={CoolProjectsDescriptions.ContadorPiscada}
-                skills={["Computer Vision", "Orochinho", "IA", "Blink 👀", ]}
-                link="https://github.com/AntonioABLima/Contador-De-Piscadas"
-                anchorText="contador_de_piscadas.github"
-                mediaLinks={[
-                    "/images/Contador.webp",
-                    "https://www.youtube.com/embed/iftimDe8hzA"
-                ]} />
-            </>
+        <Project
+            title="Mandioca Mod"
+            year="2024"
+            descriptions={CoolProjectsDescriptions.MandiocaMod}
+            skills={["Java", "Minecraft", "Cassava", "Gaming 🕹️"]}
+            link="https://www.curseforge.com/minecraft/mc-mods/mod-da-mandioca"
+            anchorText="mod_da_mandioca.page"
+            mediaLinks={[
+                "/images/ModMandica1.png",
+                "https://www.youtube.com/embed/gYlRnSLuWyo"
+            ]} />
+
+        <Project
+            title="Blink Counter"
+            year="2024"
+            descriptions={CoolProjectsDescriptions.ContadorPiscada}
+            skills={["Computer Vision", "Orochinho", "IA", "Blink 👀", ]}
+            link="https://github.com/AntonioABLima/Contador-De-Piscadas"
+            anchorText="contador_de_piscadas.github"
+            mediaLinks={[
+                "/images/Contador.webp",
+                "https://www.youtube.com/embed/iftimDe8hzA"
+            ]} />
+        </>
     );
 };
 

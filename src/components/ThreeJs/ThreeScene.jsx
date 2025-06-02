@@ -7,15 +7,15 @@ import {
     Noise,
     HueSaturation,
 } from "@react-three/postprocessing";
-import { CameraAnimation } from "./CameraAnimation";
-import { ResponsiveCamera } from "./ResponsiveCamera";
-import Model from "./Model";
+import { useProgress } from "@react-three/drei";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { CameraAnimation } from "./CameraAnimation";
+import { ResponsiveCamera } from "./ResponsiveCamera";
+import Model from "./Model";
 import ScrollIndicator from "../ScrollIndicator";
 import Loader from "../Loader/Loader";
-import { useProgress } from "@react-three/drei";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +65,6 @@ const ThreeScene = () => {
                 start: "top 85%",
                 end: "top top",
                 scrub: 0.5,
-                markers: true,
             }
         }).to(opacityMaskRef.current, {
             opacity: 1,

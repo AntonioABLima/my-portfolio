@@ -1,4 +1,3 @@
-import React from "react";
 import './project.css'
 
 const Projeto = ({ title, year, descriptions, skills, link, anchorText, mediaLinks }) => {

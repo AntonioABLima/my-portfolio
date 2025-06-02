@@ -78,6 +78,7 @@ nav .btn {
     border: var(--text-color) solid 1px;
     box-shadow: 6px 6px #d0c5b4
 }
+
 .btn.open:hover {
     box-shadow: 6px 6px 4px#d0c5b4
 }

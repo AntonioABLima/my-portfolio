@@ -1,7 +1,7 @@
-import { useState, memo } from "react";
+import { useState } from "react";
 import './navigation.css'
 
-const Navigation = memo(() => {
+const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -46,6 +46,6 @@ const Navigation = memo(() => {
  
         </nav>
     );
-});
+};
 
 export default Navigation;
