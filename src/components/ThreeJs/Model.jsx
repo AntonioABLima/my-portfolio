@@ -5,12 +5,12 @@ import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-useGLTF.preload("/models/TestWebP.glb");
+useGLTF.preload("/models/Bedroom.glb");
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 export default function Model() {
-    const { scene } = useGLTF("/models/TestWebP.glb");
+    const { scene } = useGLTF("/models/Bedroom.glb");
     const groupRef = useRef();
     const { camera, size } = useThree();
 

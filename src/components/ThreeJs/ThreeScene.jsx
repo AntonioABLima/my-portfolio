@@ -138,12 +138,13 @@ const ThreeScene = () => {
                     }}
                     dpr={[1, window.devicePixelRatio]}
                     gl={{ antialias: true }}
+                    shadows 
                 >
                     <ResponsiveCamera />
                     <CameraAnimation />
                     
                     <Suspense fallback={null}>
-                        <ambientLight intensity={3} />
+                        <ambientLight intensity={3}/>
                         <Model />
                     </Suspense>
                     

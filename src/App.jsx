@@ -4,13 +4,10 @@ import Footer from './components/Footer/footer'
 import { AboutMe } from './components/Projects/projectComponent/projectsDescriptions/ProjectsDescriptions'
 import ThreeScene from './components/ThreeJs/ThreeScene'
 import './App.css'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 
 function App() {
-	const renderCount = useRef(0);
-	renderCount.current += 1;
-	console.log("Renderizações do App:", renderCount.current);
 
 	useEffect(() => {
     	window.scrollTo(0, 0);
