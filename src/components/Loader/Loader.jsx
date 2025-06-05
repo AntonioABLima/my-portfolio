@@ -17,7 +17,6 @@ function Loader() {
                     <p className="loader-text">Carregando...</p>
                     <p className="loader-text">{progress.toFixed(0)}%</p>
                 </div>
-
             </div>
         </div>
     );
