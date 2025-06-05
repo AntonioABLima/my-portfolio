@@ -1,9 +1,6 @@
 import './Loader.css';
-import { useProgress } from "@react-three/drei";
 
-function Loader() {
-    const { progress } = useProgress()
-
+function Loader({ progress }) {
     return (
         <div className="loader-container">
             <div className='wrapper'>

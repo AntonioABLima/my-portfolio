@@ -21,7 +21,7 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const ThreeScene = () => {
-    const { progress, active } = useProgress(); 
+    const { active, progress } = useProgress(); 
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const ThreeScene = () => {
 		return () => {
 			document.body.style.overflow = '';
 		};
-	}, [progress]);
+	}, [active]);
     
     const opacityMaskRef = useRef(null);
     const canvasRef = useRef(null);
@@ -108,7 +108,7 @@ const ThreeScene = () => {
     return (
         <>
             <ScrollIndicator ref={scrollIndicatorRef} />
-            {!isLoaded && <Loader />}
+            {!isLoaded && <Loader  progress={progress}/>}
             <div
                 ref={opacityMaskRef}
                 style={{
