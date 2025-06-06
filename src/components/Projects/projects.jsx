@@ -3,6 +3,8 @@ import Project from "./projectComponent/project"
 import { RealProjectsDescription, CoolProjectsDescriptions } from "./projectComponent/projectsDescriptions/ProjectsDescriptions";
 import './projects.css'
 
+const imagesPath = import.meta.env.BASE_URL + "images/";
+
 const RealLifeProjects = () => {
 
     return (
@@ -15,7 +17,7 @@ const RealLifeProjects = () => {
             link={'https://github.com/AntonioABLima/my-portfolio'}
             anchorText="portfolio_code.github"
             mediaLinks={[
-                '/images/PortfolioBedroom.webp'
+                imagesPath + 'PortfolioBedroom.webp'
             ]} 
         />
 
@@ -35,7 +37,7 @@ const RealLifeProjects = () => {
             link={'https://github.com/AntonioABLima/Projeto-Rega-Automatica'}
             anchorText="arduino_codes.github"
             mediaLinks={[
-                '/images/WaterSystem.webp',
+                imagesPath + 'WaterSystem.webp',
                 'https://www.youtube.com/embed/frQBwNFcexE',
             ]}
         />
@@ -69,7 +71,7 @@ const CoolPersonalProjects = () => {
             skills={["Programming Puzzles", "Advent calendar", 'Christmas 🎄']}
             link="https://github.com/AntonioABLima/Advent-of-Code-2024"
             anchorText="my_codes.github"
-            mediaLinks={['/images/Aoc.png']} />
+            mediaLinks={[imagesPath + 'Aoc.png']} />
             
         <Project
             title="Mandioca Mod"
@@ -79,7 +81,7 @@ const CoolPersonalProjects = () => {
             link="https://www.curseforge.com/minecraft/mc-mods/mod-da-mandioca"
             anchorText="mod_da_mandioca.page"
             mediaLinks={[
-                "/images/ModMandica1.png",
+                imagesPath + "ModMandica1.png",
                 "https://www.youtube.com/embed/gYlRnSLuWyo"
             ]} />
 
@@ -91,7 +93,7 @@ const CoolPersonalProjects = () => {
             link="https://github.com/AntonioABLima/Contador-De-Piscadas"
             anchorText="contador_de_piscadas.github"
             mediaLinks={[
-                "/images/Contador.webp",
+                imagesPath +"Contador.webp",
                 "https://www.youtube.com/embed/iftimDe8hzA"
             ]} />
         </>

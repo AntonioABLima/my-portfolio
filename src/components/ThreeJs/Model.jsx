@@ -4,6 +4,7 @@ import { useThree } from '@react-three/fiber';
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
 const modelPath = import.meta.env.BASE_URL + "models/Bedroom.glb";
 
 useGLTF.preload(modelPath);
