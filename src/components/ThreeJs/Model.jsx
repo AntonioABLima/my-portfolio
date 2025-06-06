@@ -4,13 +4,14 @@ import { useThree } from '@react-three/fiber';
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+const modelPath = import.meta.env.BASE_URL + "models/Bedroom.glb";
 
-useGLTF.preload("/models/Bedroom.glb");
+useGLTF.preload(modelPath);
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 export default function Model() {
-    const { scene } = useGLTF("/models/Bedroom.glb");
+    const { scene } = useGLTF(modelPath);
     const groupRef = useRef();
     const { camera, size } = useThree();
 
