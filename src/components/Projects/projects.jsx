@@ -26,7 +26,9 @@ const RealLifeProjects = () => {
             year="2024"
             descriptions={RealProjectsDescription.ArqApp}
             skills={["React Native", "Node Js", "Vite", "MongoDB", "Party! 🎉"]}
-            mediaLinks={[]} 
+            mediaLinks={[
+                imagesPath + 'ArqApp.webp'
+            ]} 
         />
 
         <Project

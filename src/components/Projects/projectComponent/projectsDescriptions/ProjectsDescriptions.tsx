@@ -13,7 +13,7 @@ export const RealProjectsDescription = {
 
     ],
     ArqApp: [
-        'An application to manage employee consumption in a nightclub franchise, implemented in two cities. With around 110 users and 19K+ entries saved in the database so far.',
+        'An application to manage employee consumption in a nightclub franchise, implemented in two cities. With around 110 users and 26K+ entries saved in the database so far.',
         'The application has an API in the cloud, a mobile app made with React Native and a web dashboard for admin control.'
     ],
 
